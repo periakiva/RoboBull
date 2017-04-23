@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+		<title>CPR&FIST</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/darkly/bootstrap.min.css">
+		{{ data }} 
+		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/sweetalert2/6.6.0/sweetalert2.min.css">
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/sweetalert2/6.6.0/sweetalert2.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+		<script
+  		src="http://code.jquery.com/jquery-3.2.1.min.js"
+  		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  		crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="text/javascript" src="./bundle.js"></script>
+    <script type="text/javascript">
+    function requestData() {
+    $.ajax({
+						url: '/live-data',
+        success: function(point) {
+            var series = chart.series[0], shift = series.data.length > 20; // shift if the series is
+                                                 // longer than 20
+
+            // add the point
+            chart.series[0].addPoint(point, true, shift);
+
+            // call it again after one second
+            setTimeout(requestData, 1000);
+        },
+        cache: false
+    });
+}
+
+$(document).ready(function() {
+    chart = new Highcharts.Chart({
+        chart: {
+            renderTo: 'data-container',
+            defaultSeriesType: 'spline',
+            events: {
+                load: requestData
+            }
+        },
+        title: {
+            text: 'Stock Trending Chart'
+        },
+        xAxis: {
+            type: 'datetime',
+            tickPixelInterval: 150,
+            maxZoom: 20 * 1000
+        },
+        yAxis: {
+            minPadding: 0.2,
+            maxPadding: 0.2,
+            title: {
+                text: 'Value',
+                margin: 80
+            }
+        },
+        series: [{
+            name: 'Random data',
+            data: []
+        }]
+    });
+});
+    </script>
+  </body>
+</html>

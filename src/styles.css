@@ -1,0 +1,77 @@
+.activeTab {
+  -webkit-box-shadow: inset 0 -2px 0 #2196f3 !important;
+  box-shadow: inset 0 -2px 0 #2196f3 !important;
+  color: #2196f3 !important;
+}
+
+.buy {
+	color: #00bc8c;
+}
+
+.row-buy:hover {
+  background-color: #00bc8c;
+  color: #fff;
+  cursor: pointer;
+}
+
+.row-buy:hover .buy {
+  color: #fff;
+}
+
+.hold {
+  color: #f39c12;
+}
+
+.row-hold:hover {
+  background-color: #f39c12;
+  color: #fff;
+  cursor: pointer;
+}
+
+.row-hold:hover .hold {
+  color: #fff;
+}
+
+.sell {
+  color: #e74c3c;
+}
+
+.row-sell:hover {
+  background-color: #e74c3c;
+  color: #fff;
+  cursor: pointer;
+}
+
+.row-sell:hover .sell {
+  color: #fff;
+}
+
+.underline:hover, .underline:focus {
+	text-decoration: underline;
+}
+
+.table-container > span {
+  display:none;
+}
+
+#graph-container {
+  height: 0px;
+  transition: opacity .5s, height 1s;
+}
+
+#graph-title {
+  transition: opacity .5s, height 1s;
+}
+
+#wrapper {
+  transition: height 1s;
+}
+
+.glyphicon-chevron-up {
+  transition: opacity 1s;
+  transition-delay: 2s;
+}
+
+.glyphicon-chevron-up:hover {
+  cursor: pointer;
+}
