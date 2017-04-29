@@ -15,7 +15,7 @@ client = MongoClient()
 db = client.phonenumbers
 numbers = db.numbers
 
-account_sid = "AC04d258f01863a43af71b9ae77e20584e"
+account_sid = "YOUR-TWILIO-ACCOUNT-ID"
 auth_token = "2c6bd87946e677d6bb7dd0e639522e73"
 
 client = Client(account_sid,auth_token)
