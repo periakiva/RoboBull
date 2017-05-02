@@ -16,7 +16,7 @@ db = client.phonenumbers
 numbers = db.numbers
 
 account_sid = "YOUR-TWILIO-ACCOUNT-ID"
-auth_token = "2c6bd87946e677d6bb7dd0e639522e73"
+auth_token = "Your-Authentication-Token"
 
 client = Client(account_sid,auth_token)
 
