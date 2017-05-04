@@ -80,7 +80,7 @@ def sub():
     
     print(number)
     client.messages.create(
-        to = number, from_="+17323380639", body = "Thank you for subscribing for the stock " + str(ticker))
+        to = number, from_="YOUR TWILIO NUMBER", body = "Thank you for subscribing for the stock " + str(ticker))
     return render_template('index.html')
 
 
