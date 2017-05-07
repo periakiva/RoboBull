@@ -54,7 +54,7 @@ def data(number):
     #print number
     #print type(number)
     #print type(close)
-    data = [time.time() * 60000, number]
+    data = [time.time() * 50000, number]
     response = make_response(json.dumps(data))
     response.content_type = 'application/json'
     return response
