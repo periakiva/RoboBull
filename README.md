@@ -1,4 +1,6 @@
-Live charting and stock analysis using Flask, mongoDB, Python.
+# RoboBull
+
+This will live chart and stock analyze data using Flask, mongoDB, Python.
 
 Simply run main.py and point your browser to http://127.0.0.1:5000
 
